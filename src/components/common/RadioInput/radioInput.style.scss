@@ -1,0 +1,55 @@
+.radio-input {
+  width: 100%;
+  .option-btn {
+    all: unset;
+    box-sizing: border-box;
+    background-color: rgb(219, 232, 255);
+    color: #0f0d81;
+    width: 100%;
+    padding-left: 1rem;
+    height: 5.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 2px 2px 6px 0.5px #0000002d;
+    &:hover {
+      border: 1px solid #0f0d81;
+    }
+  }
+}
+
+.correct {
+  background-color: rgb(77, 128, 0)!important ;
+  color: rgb(219, 232, 255)!important;
+  animation: changeToGreen 0.7s linear;
+}
+
+.incorrect {
+  background-color: rgb(150, 0, 0)!important;
+  color: rgb(219, 232, 255)!important;
+  animation: changeToRed 0.7s linear;
+}
+
+@keyframes changeToGreen {
+  from {
+    background-color: rgb(219, 232, 255);
+    color: #0f0d81;
+  }
+  to {
+    background-color: rgb(77, 128, 0)!important;
+    color: rgb(219, 232, 255)!important;
+  }
+}
+
+@keyframes changeToRed {
+  from {
+    background-color: rgb(219, 232, 255);
+    color: #0f0d81;
+  }
+  to {
+    background-color: rgb(150, 0, 0)!important;
+    color: rgb(219, 232, 255)!important;
+  }
+}
