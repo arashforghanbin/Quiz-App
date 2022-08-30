@@ -34,3 +34,27 @@
     }
   }
 }
+
+@media screen and (min-width: 1279.5px) {
+  .setup {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 959.5px) and (max-width: 1280px) {
+  .setup {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 960px) and (min-width: 599.5px) {
+  .setup {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .setup {
+    width: 90%;
+  }
+}
