@@ -7,6 +7,7 @@ main {
   align-items: center;
   .category {
     color: #0f0d81;
+    text-align: center;
   }
   .score {
     color: green;
@@ -34,5 +35,31 @@ main {
       justify-content: flex-end;
       margin-top: 1.2rem;
     }
+  }
+}
+
+// RESPONSIVENESS
+
+@media screen and (min-width: 1279.5px) {
+  .card {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 959.5px) and (max-width: 1280px) {
+  main .card {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 960px) and (min-width: 599.5px) {
+  main .card {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main .card {
+    width: 90%;
   }
 }
