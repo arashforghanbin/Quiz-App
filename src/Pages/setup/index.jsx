@@ -16,7 +16,6 @@ const Setup = () => {
     questionQuantity,
     category,
     difficulty,
-    chosenQuestions,
   } = useContext(contexts);
   const getAllCategories = async () => {
     try {

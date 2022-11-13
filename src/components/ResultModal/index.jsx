@@ -27,9 +27,23 @@ const ResultModal = () => {
 
   const handleResultMessage = (result) => {
     if (result > 50) {
-      return <h2 className="modal__title">Nice Job!</h2>;
+      return (
+        <>
+          <h2 className="modal__title">Nice Job!</h2>
+          <h3 className="modal__result">
+            You answered <span className="awful">{result}%</span> correctly!
+          </h3>
+        </>
+      );
     } else {
-      return <h2 className="modal__title">Try Again!</h2>;
+      return (
+        <>
+          <h2 className="modal__title">Try Again!</h2>
+          <h3 className="modal__result">
+            You answered <span className="nice">{result}%</span> correctly!
+          </h3>
+        </>
+      );
     }
   };
 
@@ -43,9 +57,6 @@ const ResultModal = () => {
       ></canvas>
       <section className={`modal ${isActive ? "active" : ""}`}>
         {handleResultMessage(result)}
-        <h3 className="modal__result">
-          You answered <span>{result}%</span> correctly!
-        </h3>
         <button onClick={handleQuit} className="modal--btn">
           <IoHome className="modal--btn__icon" />
         </button>
