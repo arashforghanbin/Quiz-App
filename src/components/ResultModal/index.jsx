@@ -25,6 +25,14 @@ const ResultModal = () => {
     navigate("/");
   };
 
+  const handleResultMessage = (result) => {
+    if (result > 50) {
+      return <h2 className="modal__title">Nice Job!</h2>;
+    } else {
+      return <h2 className="modal__title">Try Again!</h2>;
+    }
+  };
+
   return (
     <>
       <canvas
@@ -34,7 +42,7 @@ const ResultModal = () => {
         id="my-canvas"
       ></canvas>
       <section className={`modal ${isActive ? "active" : ""}`}>
-        <h2 className="modal__title">Nice Job!</h2>
+        {handleResultMessage(result)}
         <h3 className="modal__result">
           You answered <span>{result}%</span> correctly!
         </h3>
