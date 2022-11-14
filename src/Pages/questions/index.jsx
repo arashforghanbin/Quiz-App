@@ -6,6 +6,7 @@ import "./questions.style.scss";
 import ResultModal from "../../components/ResultModal";
 import { ToastContainer } from "react-toastify";
 import Loader from "../../components/Loader";
+import DarkModeSwitch from "../../components/DarkModeSwitch";
 const Questions = () => {
   const {
     chosenQuestions,
@@ -14,6 +15,7 @@ const Questions = () => {
     score,
     setScore,
     questionQuantity,
+    darkMode,
   } = useContext(contexts);
   const [allAnswers, setAllAnswers] = useState();
 
@@ -44,7 +46,8 @@ const Questions = () => {
   };
 
   return (
-    <>
+    <div>
+      <DarkModeSwitch />
       {chosenQuestions.length > 0 ? (
         <>
           <ResultModal />
@@ -60,7 +63,7 @@ const Questions = () => {
             pauseOnHover
           />
           <main>
-            <h1 className="category">
+            <h1 className={`category ${darkMode ? "dark" : "light"}`}>
               {chosenQuestions.length > 0
                 ? chosenQuestions[counter].category
                 : ""}
@@ -68,10 +71,10 @@ const Questions = () => {
             <h2 className="score">
               score: {score}/{questionQuantity}
             </h2>
-            <section className="card">
+            <section className={`card ${darkMode ? "dark" : "light"}`}>
               <p
                 onClick={() => console.log(chosenQuestions)}
-                className="card__question"
+                className={`card__question ${darkMode ? "dark" : "light"}`}
               >
                 {chosenQuestions.length > 0
                   ? formatArea(chosenQuestions[counter].question)
@@ -105,7 +108,7 @@ const Questions = () => {
           <Loader />
         </>
       )}
-    </>
+    </div>
   );
 };
 

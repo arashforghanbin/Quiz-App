@@ -1,11 +1,27 @@
+@use "../../../assets/style/colors.scss" as *;
+
 .radio-input {
   width: 100%;
   .option-btn {
     all: unset;
     box-sizing: border-box;
-    background-color: rgb(219, 232, 255);
-    color: #0f0d81;
-    transition: 0.5s;
+    &.light {
+      background-color: $white-200;
+      color: $dark-600;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        border: 1px solid $blue-400;
+      }
+    }
+    &.dark {
+      background-color: $dark-600;
+      color: $white-100;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        border: 1px solid $purple-400;
+      }
+    }
+    transition: all 0.3s ease-in-out;
     width: 100%;
     padding-left: 1rem;
     height: 5.6rem;
@@ -15,18 +31,15 @@
     border-radius: 4px;
     font-weight: bold;
     box-shadow: 2px 2px 6px 0.5px #0000002d;
-    &:hover {
-      border: 1px solid #0f0d81;
-    }
   }
 }
 
 .correct {
-  background-color: rgb(77, 128, 0) !important ;
-  color: rgb(219, 232, 255) !important;
+  background-color: $green-400 !important ;
+  color: $white-100 !important;
 }
 
 .incorrect {
-  background-color: rgb(150, 0, 0) !important;
-  color: rgb(219, 232, 255) !important;
+  background-color: $red-400 !important;
+  color: $white-100 !important;
 }

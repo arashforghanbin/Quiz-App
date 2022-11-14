@@ -13,6 +13,7 @@ const QuestionButton = ({ type, buttonName }) => {
     questionQuantity,
     selected,
     setIsActive,
+    darkMode,
   } = useContext(contexts);
 
   const confettiSettings = {
@@ -31,13 +32,17 @@ const QuestionButton = ({ type, buttonName }) => {
       setCounter(counter + 1);
       setSelected("");
     } else {
-      toast.warn("Please Choose an Answer!😐")
+      toast.warn("Please Choose an Answer!😐");
     }
   };
 
   return (
     <>
-      <button className="ordinary-btn" onClick={handleNext} type={type}>
+      <button
+        className={`ordinary-btn ${darkMode ? "dark" : "light"}`}
+        onClick={handleNext}
+        type={type}
+      >
         {buttonName}
       </button>
     </>

@@ -5,7 +5,7 @@ import "./radioInput.style.scss";
 
 // fix the click issue
 const RadioInput = ({ value, text, onClick, answer }) => {
-  const { chosenQuestions, counter, selected } = useContext(contexts);
+  const { chosenQuestions, counter, selected, darkMode } = useContext(contexts);
 
   const handleSelect = (chosenAnswer) => {
     const correct = chosenQuestions[counter].correct_answer;
@@ -16,10 +16,11 @@ const RadioInput = ({ value, text, onClick, answer }) => {
   };
 
   return (
-    <div className={`radio-input `}>
+    <div className={`radio-input ${darkMode ? "dark" : "light"} `}>
       <button
         className={`option-btn ${
-          selected.length > 0 ? handleSelect(answer) : null
+          (selected.length > 0 ? handleSelect(answer) : null,
+          darkMode ? "dark" : "light")
         }`}
         disabled={selected}
         onClick={onClick}

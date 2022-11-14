@@ -1,3 +1,5 @@
+@use "../../assets/style/colors.scss" as *;
+
 main {
   display: flex;
   justify-content: center;
@@ -6,21 +8,36 @@ main {
   gap: 2.4rem;
   align-items: center;
   .category {
-    color: #0f0d81;
+    &.light {
+      color: $blue-500;
+    }
+    &.dark {
+      color: $white-100;
+    }
     text-align: center;
   }
   .score {
-    color: green;
+    color: $green-400;
   }
   .card {
-    background-color: #fffef9;
+    &.light {
+      background-color: $white-100;
+    }
+    &.dark {
+      background-color: $dark-400;
+    }
     width: 30%;
     padding: 1.6rem;
     border-radius: 8px;
     box-shadow: 3px 3px 10px 0.5px rgba(0, 0, 0, 0.192);
     &__question {
+      &.light {
+        color: $dark-600;
+      }
+      &.dark {
+        color: $white-100;
+      }
       margin-bottom: 1.2rem;
-      color: #0f0d81;
       font-size: 2rem;
       font-weight: bold;
     }

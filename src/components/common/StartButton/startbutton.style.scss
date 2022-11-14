@@ -1,32 +1,38 @@
+@use "../../../assets/style/colors.scss" as *;
+
 .ordinary-btn {
   all: unset;
   font-weight: bold;
-  color: #0f0d81;
-  background: rgb(255, 173, 1);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 173, 1, 1) 0%,
-    rgba(255, 200, 85, 1) 100%
-  );
+  &.light {
+    color: $white-100;
+    background: $blue-400;
+    background: linear-gradient(90deg, $blue-400 0%, $blue-300 100%);
+    &:hover {
+      background: $blue-500;
+      background: linear-gradient(90deg, $blue-500 0%, $blue-300 100%);
+    }
+    &:active {
+      background: $blue-300;
+      background: linear-gradient(90deg, $blue-300 0%, $blue-200 100%);
+    }
+  }
+  &.dark {
+    color: $white-100;
+    background: $blue-400;
+    background: linear-gradient(90deg, $purple-400 0%, $purple-300 100%);
+
+    &:hover {
+      background: $blue-500;
+      background: linear-gradient(90deg, $purple-500 0%, $purple-400 100%);
+    }
+    &:active {
+      background: $blue-300;
+      background: linear-gradient(90deg, $purple-300 0%, $purple-300 100%);
+    }
+  }
+
   text-align: center;
   padding: 1.2rem;
   margin: 1.6rem 0;
   border-radius: 4px;
-  box-shadow: 3px 3px 10px 0.5px #ffaf014f;
-  &:hover {
-    background: rgb(255, 191, 53);
-    background: linear-gradient(
-      90deg,
-      rgb(255, 192, 56) 0%,
-      rgb(255, 219, 140) 100%
-    );
-  }
-  &:active {
-    background: rgb(190, 130, 0);
-    background: linear-gradient(
-      90deg,
-      rgb(180, 123, 0) 0%,
-      rgb(226, 155, 0) 100%
-    );
-  }
 }

@@ -3,8 +3,13 @@ import { contexts } from "../../../context";
 import "./RangeInput.style.scss";
 
 const RangeInput = ({ labelFor, labelName, max, min, step, id }) => {
-  const { difficulty, setDifficulty, backgroundSize, setbackgroundSize } =
-    useContext(contexts);
+  const {
+    difficulty,
+    setDifficulty,
+    backgroundSize,
+    setbackgroundSize,
+    darkMode,
+  } = useContext(contexts);
 
   const handleDifficultyChange = (e) => {
     const min = e.target.min;
@@ -37,6 +42,7 @@ const RangeInput = ({ labelFor, labelName, max, min, step, id }) => {
           {labelName} {difficulty}
         </p>
         <input
+          className={darkMode ? "dark" : "light"}
           style={{ backgroundSize: `${backgroundSize} 100%` }}
           onChange={(e) => handleDifficultyChange(e)}
           type="range"

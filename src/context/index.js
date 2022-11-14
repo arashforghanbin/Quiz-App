@@ -22,6 +22,8 @@ export const contexts = createContext({
   setScore: () => {},
   isActive: false,
   setIsActive: () => {},
+  darkMode: false,
+  setDarkMode: () => {},
 });
 
 const ContextProvider = ({ children }) => {
@@ -35,6 +37,7 @@ const ContextProvider = ({ children }) => {
   const [selected, setSelected] = useState("");
   const [score, setScore] = useState(0);
   const [isActive, setIsActive] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
     <contexts.Provider
@@ -59,6 +62,8 @@ const ContextProvider = ({ children }) => {
         setScore,
         isActive,
         setIsActive,
+        darkMode,
+        setDarkMode,
       }}
     >
       {children}
