@@ -17,7 +17,11 @@ const Setup = () => {
     questionQuantity,
     category,
     difficulty,
+<<<<<<< HEAD
     darkMode,
+=======
+    chosenQuestions,
+>>>>>>> parent of 39586eb (modal message color modified)
   } = useContext(contexts);
   const getAllCategories = async () => {
     try {
